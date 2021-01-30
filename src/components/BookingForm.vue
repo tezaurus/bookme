@@ -77,6 +77,7 @@ export default {
                 phone: this.phone,
             }
 
+            // При реальном запросе нужно будет обрабатывать then() catch()
             this.sendBooking(bookingData);
 
             this.resetForm();

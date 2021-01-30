@@ -8,17 +8,20 @@ export default {
 
     actions: {
         async fetchHotels({ commit }) {
-            // Fetch from backend
+            // Запрос на backend
             // const response = await fetch('...');
-            //
             // commit('loadHotels', await response.json());
 
             commit('loadHotels', hotels);
         },
 
         async getCurrentHotel({ commit, getters, dispatch }, id) {
-            // Fetch from backend, if needs
-            await dispatch('fetchHotels');
+            // Запрос на backend, если данных в hotels мало
+            // const response = await fetch('.../id');
+            // commit('setCurrentHotel', await response.json());
+
+            if (getters.hotels.length === 0)
+                await dispatch('fetchHotels');
 
             const hotel = getters.hotels.find(hotel => hotel.id === id);
 

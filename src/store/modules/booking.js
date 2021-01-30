@@ -5,7 +5,20 @@ export default {
 
     actions: {
         async sendBooking({ commit }, bookingData) {
-            // Post to backend
+            // ~ POST запрос на сервер
+            // нужно будет переработать метод submitBooking в BookingForm
+            // fetch('...', { method: 'POST', body: JSON.stringify(bookingData)})
+            //     .then(async response => {
+            //         const data = await response.json();
+
+            //         if (! data.ok) {
+            //             const error = (data && data.message) || data.status;
+            //             return Promise.reject(error);
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.log(error);
+            //     });
 
             commit('storeBooking', bookingData);
         }
