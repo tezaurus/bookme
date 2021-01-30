@@ -10,12 +10,17 @@
                 <p>{{ currentHotel.addr }}</p>
             </div>
         </div>
+
+        <booking-form/>
     </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import BookingForm from '../components/BookingForm.vue'
 export default {
+    components: { BookingForm },
+
     data() {
         return {
             id: this.$route.params.id
