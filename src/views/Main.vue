@@ -12,7 +12,7 @@
 
                     <p>{{ hotel.addr }}</p>
 
-                    <button class="btn">Выбрать отель</button>
+                    <button class="btn" @click="gotoHotel(hotel.id)">Выбрать отель</button>
                 </div>
             </div>
         </div>
@@ -23,7 +23,13 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    computed: mapGetters(['hotels'])
+    computed: mapGetters(['hotels']),
+
+    methods: {
+        gotoHotel(id) {
+            this.$router.push({ name: 'hotel', params: { id: id } });
+        }
+    }
 }
 </script>
 
