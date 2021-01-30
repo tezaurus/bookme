@@ -20,21 +20,24 @@
                 <form @submit.prevent="submitBooking">
                     <div class="form-group">
                         <label for="">E-mail</label>
-                        <input type="text" class="form-control" v-model="email">
+                        <input type="text" class="form-control" name="email" v-model="email">
+                        <div class="form-control-text form-control-text-error" v-show="!email">Поле обязательно для заполнения</div>
                     </div>
 
                     <div class="form-group">
                         <label for="">Имя гостя</label>
-                        <input type="text" class="form-control" v-model="name">
+                        <input type="text" class="form-control" name="name" v-model="name">
+                        <div class="form-control-text form-control-text-error" v-show="!name">Поле обязательно для заполнения</div>
                     </div>
 
                     <div class="form-group">
                         <label for="">Телефон гостя</label>
-                        <input type="text" class="form-control" v-model="phone">
+                        <input type="text" class="form-control" name="phone" v-model="phone">
+                        <div class="form-control-text form-control-text-error" v-show="!phone">Поле обязательно для заполнения</div>
                     </div>
 
                     <div class="btn-wrapper">
-                        <button class="btn" type="submit">Забронировать</button>
+                        <button class="btn" type="submit" :disabled="!fieldsIsValid">Забронировать</button>
                     </div>
                 </form>
             </div>
@@ -47,14 +50,20 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
-            email: '',
-            name: '',
-            phone: '',
+            email: null,
+            name: null,
+            phone: null,
             sended: false,
         }
     },
 
-    computed: mapGetters(['currentHotel']),
+    computed: {
+        ...mapGetters(['currentHotel']),
+
+        fieldsIsValid() {
+            return this.email && this.name && this.phone;
+        }
+    },
 
     methods: {
         ...mapActions(['sendBooking']),
@@ -84,7 +93,7 @@ export default {
         },
 
         resetForm() {
-            this.email = this.name = this.phone = '';
+            this.email = this.name = this.phone = null;
         }
     }
 }

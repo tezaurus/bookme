@@ -119,6 +119,16 @@ a {
     width: 100%;
 }
 
+.form-control-text {
+    font-size: 10px;
+    color: #939393;
+    margin-top: 4px;
+}
+
+.form-control-text-error {
+    color: red;
+}
+
 .btn {
     box-sizing: border-box;
     padding: 12px 16px;

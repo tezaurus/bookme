@@ -14,7 +14,7 @@ export default {
         },
 
         async getCurrentHotel({ commit, getters, dispatch }, id) {
-            // Fetch from backend
+            // Fetch from backend, if needs
             await dispatch('fetchHotels');
 
             const hotel = getters.hotels.find(hotel => hotel.id === id);
