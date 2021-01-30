@@ -6,7 +6,7 @@
             </div>
 
             <div id="nav">
-                <router-link to="/">Главная</router-link>
+                <router-link to="/">Выбор отеля</router-link>
                 <router-link to="/bookings">Текущие брони</router-link>
             </div>
         </div>

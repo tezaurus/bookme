@@ -17,7 +17,7 @@
         </div>
 
         <div class="bookings" v-else>
-            <p>Еще нет ни одно текущей брони, <router-link to="/">выберите отель</router-link>, чтобы выполнить бронь</p>
+            <p>Еще нет ни одной текущей брони, <router-link to="/">выберите отель</router-link>, чтобы выполнить бронь</p>
         </div>
     </div>
 </template>

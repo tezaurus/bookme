@@ -9,6 +9,9 @@ export default {
     actions: {
         async fetchHotels({ commit }) {
             // Fetch from backend
+            // const response = await fetch('...');
+            //
+            // commit('loadHotels', await response.json());
 
             commit('loadHotels', hotels);
         },
